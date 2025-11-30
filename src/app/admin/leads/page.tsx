@@ -9,9 +9,37 @@ export const metadata = {
 };
 
 export default async function AdminLeadsPage() {
-  const leads = await prisma.lead.findMany({
-    orderBy: { createdAt: "desc" },
-  });
+  let leads: Awaited<ReturnType<typeof prisma.lead.findMany>> = [];
+  let dbError: string | null = null;
+
+  try {
+    leads = await prisma.lead.findMany({
+      orderBy: { createdAt: "desc" },
+    });
+  } catch (err) {
+    console.error("Failed to load leads from Prisma in this environment:", err);
+    dbError =
+      "The database is not available in this environment. Leads listing is disabled in production until a proper hosted database is configured.";
+  }
+
+  if (dbError) {
+    return (
+      <main className="mx-auto max-w-3xl px-4 py-10">
+        <h1 className="mb-3 text-xl font-semibold tracking-tight">
+          Collected leads
+        </h1>
+        <p className="mb-3 text-sm text-red-700">
+          {dbError}
+        </p>
+        <p className="text-xs text-slate-600">
+          Locally (on your laptop), Prisma uses a SQLite file and this page works
+          normally. On Vercel, you&apos;ll need to point Prisma at a hosted database
+          (for example Vercel Postgres, Neon, Supabase) if you want persistent
+          leads in production.
+        </p>
+      </main>
+    );
+  }
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
