@@ -393,3 +393,302 @@ body {
     height: 120px;
   }
 }
+
+/* ===== Concierge page ===== */
+
+.concierge-main {
+  padding-top: 3.5rem;
+  padding-bottom: 3rem;
+}
+
+.concierge-header {
+  max-width: 44rem;
+  margin-bottom: 2.5rem;
+}
+
+.concierge-title {
+  margin-bottom: 0.4rem;
+}
+
+.concierge-lead {
+  max-width: 40rem;
+}
+
+.concierge-cta-row {
+  margin-top: 1.4rem;
+}
+
+.concierge-note {
+  margin-top: 0.75rem;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.concierge-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .concierge-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.concierge-wide {
+  margin-top: 1.5rem;
+  max-width: 44rem;
+}
+
+.concierge-card {
+  border-radius: 1.4rem;
+  padding: 1.3rem 1.4rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.08);
+}
+
+.concierge-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.5rem;
+}
+
+.concierge-list {
+  margin: 0;
+  padding-left: 1rem;
+  font-size: 0.8rem;
+  line-height: 1.7;
+  color: #374151;
+}
+
+.concierge-list li {
+  margin-bottom: 0.25rem;
+}
+
+.concierge-body {
+  margin: 0.25rem 0 0;
+  font-size: 0.8rem;
+  line-height: 1.8;
+  color: #374151;
+}
+
+/* Concierge hero layout with smaller image */
+.concierge-hero {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  margin-bottom: 2.5rem;
+}
+
+.concierge-hero-media {
+  display: flex;
+  justify-content: center;
+}
+
+.concierge-hero-img {
+  max-width: 220px;
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.25);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Side-by-side on larger screens */
+@media (min-width: 900px) {
+  .concierge-hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .concierge-hero-media {
+    flex: 0 0 auto;
+  }
+
+  .concierge-header {
+    margin-bottom: 0;
+  }
+}
+
+/* ===== Calendar page ===== */
+
+.calendar-main {
+  padding-top: 3.5rem;
+  padding-bottom: 3.5rem;
+}
+
+.calendar-hero {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 1.75rem;
+  margin-bottom: 2.75rem;
+}
+
+.calendar-hero-copy {
+  max-width: 42rem;
+}
+
+.calendar-title {
+  margin-bottom: 0.4rem;
+}
+
+.calendar-lead {
+  max-width: 38rem;
+}
+
+.calendar-cta-row {
+  margin-top: 1.4rem;
+}
+
+.calendar-note {
+  margin-top: 0.8rem;
+  font-size: 11px;
+  color: #6b7280;
+}
+
+.calendar-hero-media {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.calendar-hero-img {
+  max-width: 260px;
+  width: 100%;
+  border-radius: 1.5rem;
+  box-shadow: 0 18px 44px rgba(15, 23, 42, 0.22);
+  border: 1px solid rgba(148, 163, 184, 0.6);
+}
+
+/* Side-by-side layout on wider screens */
+@media (min-width: 900px) {
+  .calendar-hero {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .calendar-hero-media {
+    justify-content: flex-end;
+    flex: 0 0 auto;
+  }
+}
+
+/* Month grid */
+
+.calendar-grid-wrapper {
+  margin-top: 0.5rem;
+}
+
+.calendar-section-header {
+  margin-bottom: 1.2rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+@media (min-width: 800px) {
+  .calendar-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1120px) {
+  .calendar-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+.calendar-card {
+  border-radius: 1.4rem;
+  padding: 1.2rem 1.3rem;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.06);
+  display: flex;
+  flex-direction: column;
+  min-height: 220px;
+}
+
+.calendar-card-header {
+  margin-bottom: 0.75rem;
+}
+
+.calendar-card-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0 0 0.1rem;
+}
+
+.calendar-card-intro {
+  margin: 0;
+  font-size: 0.78rem;
+  color: #6b7280;
+}
+
+.calendar-card-body {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.calendar-departure-route {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #111827;
+  margin: 0;
+}
+
+.calendar-departure-region {
+  font-weight: 400;
+  color: #6b7280;
+}
+
+.calendar-departure-meta {
+  margin: 0.05rem 0;
+  font-size: 0.76rem;
+  color: #4b5563;
+}
+
+.calendar-departure-price {
+  font-weight: 500;
+}
+
+.calendar-departure-summary {
+  margin: 0.1rem 0 0;
+  font-size: 0.76rem;
+  color: #4b5563;
+}
+
+.calendar-tags-row {
+  margin-top: 0.25rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+
+.calendar-tag {
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background-color: #f3f4f6;
+  font-size: 0.68rem;
+  color: #6b7280;
+}
+
+.calendar-card-footer {
+  margin-top: 0.9rem;
+}
+
+.calendar-card-link {
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: #111827;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
