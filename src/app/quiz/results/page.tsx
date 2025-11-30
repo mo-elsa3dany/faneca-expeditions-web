@@ -1,8 +1,9 @@
 import { TRIPS } from "@/data/trips";
 import { getTopTrips } from "@/lib/quiz-score";
 import type { QuizAnswers, ExperienceLevel, TravelWindow } from "@/lib/quiz-types";
-import type { BudgetBand, TripVibe, FocusTag, GroupType } from "@/lib/types";
+import type { BudgetBand, TripVibe, FocusTag, GroupType, Trip } from "@/lib/types";
 import Link from "next/link";
+import { LeadCapture } from "@/components/quiz/LeadCapture";
 
 type SearchParams = { [key: string]: string | string[] | undefined };
 
@@ -31,7 +32,7 @@ function parseAnswers(searchParams: SearchParams): QuizAnswers {
     travelWindow,
     tripVibes,
     focusTags: focusValues,
-    groupType
+    groupType,
   };
 }
 
@@ -42,13 +43,13 @@ interface ResultsPageProps {
 export const metadata = {
   title: "Your liveaboard matches | Faneca Expeditions",
   description:
-    "Curated liveaboard recommendations based on your experience, budget and travel preferences."
+    "Curated liveaboard recommendations based on your experience, budget and travel preferences.",
 };
 
 export default async function QuizResultsPage({ searchParams }: ResultsPageProps) {
   const params = await searchParams;
   const answers = parseAnswers(params);
-  const matches = getTopTrips(TRIPS, answers, 5);
+  const matches = getTopTrips(TRIPS, answers, 5) as Trip[];
 
   return (
     <main className="mx-auto max-w-4xl px-4 py-10">
@@ -57,13 +58,16 @@ export default async function QuizResultsPage({ searchParams }: ResultsPageProps
           Your liveaboard matches
         </h1>
         <p className="max-w-2xl text-sm text-slate-600">
-          Based on your answers, these are the trips most likely to fit how you like to dive.
+          Based on your answers, these are the trips that are most likely to fit how you like to
+          dive. Treat this as a curated shortlist, not a fixed list of options — we can always tune
+          things once we speak.
         </p>
       </header>
 
       {matches.length === 0 ? (
         <div className="rounded-lg border border-slate-200 bg-white/80 p-4 text-sm text-slate-700">
-          No clean match yet. Widen your regions or budget, or{" "}
+          We couldn&apos;t find a clean match with the current sample data yet. Try widening your
+          regions or budget, or{" "}
           <Link href="/concierge" className="underline underline-offset-2">
             request a private planning session
           </Link>
@@ -78,37 +82,42 @@ export default async function QuizResultsPage({ searchParams }: ResultsPageProps
             >
               <div className="flex flex-col gap-2 md:flex-row md:items-start md:justify-between">
                 <div className="space-y-1">
-                  <h2 className="text-sm font-semibold">{trip.name}</h2>
+                  <h2 className="text-sm font-semibold tracking-tight">
+                    {trip.name}
+                  </h2>
                   <p className="text-xs text-slate-600">
-                    {trip.region}{trip.country ? ` · ${trip.country}` : ""} · {trip.lengthNights} nights
+                    {trip.region}
+                    {trip.country ? ` · ${trip.country}` : ""} · {trip.lengthNights} nights
                   </p>
-                  <p className="text-xs text-slate-700">{trip.shortDescription}</p>
+                  <p className="text-xs text-slate-700">
+                    {trip.shortDescription}
+                  </p>
                 </div>
-
-                <div className="mt-1 flex flex-col items-start gap-2 text-xs md:items-end">
+                <div className="mt-1 flex flex-col items-start gap-2 text-xs text-slate-600 md:items-end">
                   <div className="flex flex-wrap gap-1">
-                    <span className="rounded-full border border-slate-200 px-2 py-[2px] text-[10px] uppercase">
+                    <span className="rounded-full border border-slate-200 px-2 py-[2px] text-[10px] uppercase tracking-wide">
                       {trip.budgetBand}
                     </span>
-                    <span className="rounded-full border border-slate-200 px-2 py-[2px] text-[10px] uppercase">
+                    <span className="rounded-full border border-slate-200 px-2 py-[2px] text-[10px] uppercase tracking-wide">
                       {trip.difficulty}
                     </span>
                     {trip.focusTags.slice(0, 2).map((tag) => (
-                      <span key={tag} className="rounded-full border border-slate-200 px-2 py-[2px] text-[10px] uppercase">
+                      <span
+                        key={tag}
+                        className="rounded-full border border-slate-200 px-2 py-[2px] text-[10px] uppercase tracking-wide"
+                      >
                         {tag}
                       </span>
                     ))}
                   </div>
-
                   <Link
                     href={`/trips/${trip.slug}`}
-                    className="text-[11px] underline-offset-2 hover:underline"
+                    className="text-[11px] font-medium underline-offset-2 hover:underline"
                   >
                     View trip details
                   </Link>
                 </div>
               </div>
-
               <div className="mt-3 border-t border-slate-100 pt-3">
                 <p className="text-[11px] text-slate-600">
                   Typical routing: {trip.itinerarySummary}
@@ -119,12 +128,20 @@ export default async function QuizResultsPage({ searchParams }: ResultsPageProps
         </section>
       )}
 
+      <LeadCapture answers={answers} matches={matches} />
+
       <footer className="mt-6 flex items-center justify-between text-xs text-slate-500">
-        <Link href="/quiz" className="underline-offset-2 hover:underline">
+        <Link
+          href="/quiz"
+          className="underline-offset-2 hover:text-slate-700 hover:underline"
+        >
           Adjust my answers
         </Link>
-        <Link href="/concierge" className="underline-offset-2 hover:underline">
-          Prefer a bespoke plan? Explore the private planning service →
+        <Link
+          href="/concierge"
+          className="underline-offset-2 hover:text-slate-700 hover:underline"
+        >
+          Prefer a fully bespoke plan? Explore the private planning service →
         </Link>
       </footer>
     </main>

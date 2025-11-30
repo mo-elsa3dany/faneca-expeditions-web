@@ -67,6 +67,15 @@ export default function HomePage() {
           </p>
         </Link>
       </section>
+
+      <footer className="mt-10 flex justify-end">
+        <Link
+          href="/admin/login"
+          className="text-[10px] text-slate-400 underline-offset-2 hover:text-slate-600 hover:underline"
+        >
+          admin
+        </Link>
+      </footer>
     </main>
   );
 }
