@@ -37,6 +37,8 @@ export function MonthBlock({ block }: Props) {
       <div className="mt-2 space-y-3">
         {departures.map((dep) => {
           const nights = calculateNights(dep.startDate, dep.endDate);
+          const hasPrice = dep.fromPrice != null;
+
           return (
             <article
               key={dep.id}
@@ -45,11 +47,16 @@ export function MonthBlock({ block }: Props) {
               <div className="flex items-baseline justify-between gap-2">
                 <div>
                   <div className="text-xs font-medium text-slate-700">
-                    {dep.region} · {dep.boatName}
+                    {dep.region} {dep.boatName ? `· ${dep.boatName}` : ""}
                   </div>
                   <div className="text-xs text-slate-600">
-                    {formatDateRange(dep.startDate, dep.endDate)} · {nights} nights · from{" "}
-                    ${dep.fromPrice.toLocaleString()}
+                    {formatDateRange(dep.startDate, dep.endDate)} · {nights} nights
+                    {hasPrice && (
+                      <>
+                        {" "}
+                        · from ${dep.fromPrice!.toLocaleString()}
+                      </>
+                    )}
                   </div>
                 </div>
               </div>
