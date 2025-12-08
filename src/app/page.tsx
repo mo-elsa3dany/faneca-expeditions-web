@@ -1,168 +1,229 @@
+import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 
-export const metadata = {
-  title: "Faneca Expeditions — Boutique Liveaboard Diving",
+export const metadata: Metadata = {
+  title: "Boutique liveaboard specialists for divers | Faneca Expeditions",
   description:
-    "Boutique liveaboard agency curating tailored itineraries on trusted boats across the Red Sea, Indonesia, the Caribbean and beyond.",
+    "Faneca Expeditions designs and plans liveaboard trips with a focus on routing, conditions and the right boats. Trip matchmaker quiz, curated departure calendar and dedicated concierge support.",
 };
-
-const signatureDestinations = [
-  {
-    name: "Red Sea — Egypt",
-    tagline: "Sharks, WWII wrecks & coral walls.",
-    from: "From 1,250 USD",
-    image: "/images/destinations/redsea.jpg.JPG",
-    region: "Egypt · Red Sea",
-    season: "Best: Mar–Nov",
-  },
-  {
-    name: "Raja Ampat — Indonesia",
-    tagline: "The richest reefs on Earth.",
-    from: "From 2,079 USD",
-    image: "/images/destinations/raja-ampat.jpg",
-    region: "Indonesia · Raja Ampat",
-    season: "Best: Oct–Apr",
-  },
-  {
-    name: "Bahamas — Caribbean",
-    tagline: "Tigers, reef sharks & turquoise.",
-    from: "From 2,900 USD",
-    image: "/images/destinations/bahamas.jpg",
-    region: "Bahamas · Caribbean",
-    season: "Best: Nov–May",
-  },
-  {
-    name: "Maldives — Central Atolls",
-    tagline: "Mantas & soft drifts.",
-    from: "From 3,240 USD",
-    image: "/images/destinations/maldives.jpg",
-    region: "Maldives · Indian Ocean",
-    season: "Best: Dec–Apr",
-  },
-  {
-    name: "Thailand — Andaman Sea",
-    tagline: "Soft coral seamounts & jungle isles.",
-    from: "From 2,720 USD",
-    image: "/images/destinations/thailand.jpg",
-    region: "Thailand · Andaman Sea",
-    season: "Best: Nov–Apr",
-  },
-  {
-    name: "Galápagos — Ecuador",
-    tagline: "Hammerheads & wild currents.",
-    from: "From 7,500 USD",
-    image: "/images/destinations/galapagos.JPG",
-    region: "Ecuador · Galápagos",
-    season: "Best: Jun–Nov",
-  },
-];
 
 export default function HomePage() {
   return (
-    <main className="main-shell home">
-      {/* Header / hero */}
-      <header className="home-header">
+    <main className="home">
+      {/* Hero */}
+      <section className="home-hero">
         <div className="home-hero-grid">
-          <div className="home-hero-copy">
-            <p className="home-kicker">FANECA EXPEDITIONS</p>
-            <h1 className="home-title">Your adventure starts here.</h1>
+          <div className="home-hero-main">
+            <p className="home-kicker">Boutique liveaboard trip design</p>
+
+            <h1 className="home-title">
+              Better decisions start with better trip design.
+            </h1>
+
             <p className="home-lead">
-              Boutique liveaboard planning for divers who care about season, route and boat
-              quality as much as the price tag. We help you move from “20 open tabs” to a
-              small, realistic shortlist that actually fits how you like to dive.
+              We guide you through timing, routes and vessel fit — clean, curated,
+              transparent.
+            </p>
+
+            <p className="home-footnote">
+              A boutique liveaboard agency with a modern approach to planning.
             </p>
 
             <div className="home-cta-row">
-              <Link href="/quiz" className="home-cta-primary">
+              <Link href="/quiz" className="home-cta home-cta-primary">
                 Start the trip matchmaker
               </Link>
-              <Link href="/calendar" className="home-cta-secondary">
-                Browse departures calendar
+              <Link href="/concierge" className="home-cta home-cta-secondary">
+                Need expert guidance on routes or timing? Connect with the concierge →
               </Link>
-              <Link href="/concierge" className="home-cta-tertiary">
-                Talk to the concierge
-              </Link>
-            </div>
-
-            <div className="home-contact-row">
-              <a href="https://wa.me" target="_blank" rel="noreferrer">
-                WhatsApp
-              </a>
-              <span>·</span>
-              <a href="mailto:info@fanecaexpeditions.com">
-                info@fanecaexpeditions.com
-              </a>
-              <span>·</span>
-              <a
-                href="https://instagram.com/fanecaexpeditions"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @fanecaexpeditions
-              </a>
             </div>
           </div>
 
-          {/* Hero photo panel */}
-          <div className="home-hero-photo" aria-hidden="true" />
+          <aside className="home-hero-card" aria-label="Example route">
+            <p className="home-hero-label">Sample route snapshot</p>
+            <p className="home-hero-route">Red Sea · Offshore sharks &amp; reefs</p>
+            <p className="home-hero-meta">
+              7 nights · typical Oct–Dec · mix of offshore shark sites and classic
+              reef walls. Suitable for comfortable intermediates and above.
+            </p>
+            <p className="home-hero-meta">
+              We&apos;ll sanity-check conditions, moon phase and your experience
+              before suggesting boats.
+            </p>
+          </aside>
         </div>
-      </header>
+      </section>
 
-      {/* Signature destinations */}
-      <section>
+      {/* Signature regions */}
+      <section className="home-section">
         <div className="home-section-header">
-          <h2 className="home-section-title">Signature destinations</h2>
+          <h2 className="home-section-title">
+            Signature liveaboard regions we work with often
+          </h2>
           <p className="home-section-sub">
-            A starting point — we also work quietly with other operators and routes.
+            A focused set of regions where we understand seasons, routing quirks
+            and operator styles — not a giant, generic list.
           </p>
         </div>
 
-        <div className="destinations-grid">
-          {signatureDestinations.map((dest) => (
-            <article key={dest.name} className="destination-card">
-              <img
-                src={dest.image}
-                alt={dest.name}
+        <div className="home-cols home-cols-destinations">
+          {/* Red Sea */}
+          <article className="destination-card">
+            <div className="destination-image-wrap">
+              <Image
+                src="/images/destinations/red-sea.jpeg"
+                alt="Red Sea liveaboard route"
+                width={640}
+                height={400}
                 className="destination-image"
               />
-              <h3 className="destination-name">{dest.name}</h3>
-              <p className="destination-tagline">{dest.tagline}</p>
-              <p className="destination-price">{dest.from}</p>
-              <div className="destination-meta-row">
-                <span className="destination-chip">{dest.region}</span>
-                <span className="destination-chip">{dest.season}</span>
-              </div>
-            </article>
-          ))}
+            </div>
+            <div className="destination-body">
+              <h3 className="destination-title">
+                Red Sea · Offshore &amp; classic routes
+              </h3>
+              <p className="destination-meta">
+                Seasonal shark routes plus northern and central itineraries.
+              </p>
+              <p className="destination-text">
+                Classic shark routes, wrecks and reef walls with predictable
+                seasonality. Good for mixed groups if we choose the right week,
+                route and boat.
+              </p>
+            </div>
+          </article>
+
+          {/* Maldives */}
+          <article className="destination-card">
+            <div className="destination-image-wrap">
+              <Image
+                src="/images/destinations/maldives.jpeg"
+                alt="Maldives liveaboard"
+                width={640}
+                height={400}
+                className="destination-image"
+              />
+            </div>
+            <div className="destination-body">
+              <h3 className="destination-title">
+                Maldives · Channels &amp; atoll routes
+              </h3>
+              <p className="destination-meta">
+                Channel dives, cleaning stations and classic atoll loops.
+              </p>
+              <p className="destination-text">
+                From slightly softer central itineraries to more current-exposed
+                routes, we help match conditions and current requirements to your
+                actual experience — not just your certification card.
+              </p>
+            </div>
+          </article>
+
+          {/* Raja Ampat */}
+          <article className="destination-card">
+            <div className="destination-image-wrap">
+              <Image
+                src="/images/destinations/raja-ampat.jpeg"
+                alt="Raja Ampat liveaboard"
+                width={640}
+                height={400}
+                className="destination-image"
+              />
+            </div>
+            <div className="destination-body">
+              <h3 className="destination-title">
+                Raja Ampat · Reefs, seamounts &amp; macro
+              </h3>
+              <p className="destination-meta">
+                Central &amp; Dampier Strait routes, plus select extended trips.
+              </p>
+              <p className="destination-text">
+                Warm water, dense reefs and busy seamounts. We help choose
+                between classic central routes, longer combos and options that
+                balance macro with big-picture scenery.
+              </p>
+            </div>
+          </article>
+
+          {/* Bahamas */}
+          <article className="destination-card">
+            <div className="destination-image-wrap">
+              <Image
+                src="/images/destinations/bahamas.jpeg"
+                alt="Bahamas liveaboard"
+                width={640}
+                height={400}
+                className="destination-image"
+              />
+            </div>
+            <div className="destination-body">
+              <h3 className="destination-title">
+                Bahamas · Sharks &amp; clear-water reefs
+              </h3>
+              <p className="destination-meta">
+                Shark-focused trips and reef itineraries.
+              </p>
+              <p className="destination-text">
+                From shark-specific liveaboards to relaxed Caribbean reef routes,
+                we help match the right operation to your comfort level and travel
+                logistics.
+              </p>
+            </div>
+          </article>
         </div>
       </section>
 
-      {/* How we work */}
-      <section className="home-how-grid">
-        <div>
-          <h2 className="home-how-title">
-            How we help you choose the right liveaboard.
+      {/* How we help section */}
+      <section className="home-section">
+        <div className="home-section-header">
+          <h2 className="home-section-title">
+            Ways to work with Faneca Expeditions
           </h2>
-          <ul className="home-how-list">
-            <li>You tell us how you like to dive, your rough dates and budget.</li>
-            <li>We check seasonality, routing and operator quality instead of just price.</li>
-            <li>You receive a concise shortlist instead of endless search results.</li>
-            <li>We speak directly with operators on your behalf to confirm the details.</li>
-          </ul>
+          <p className="home-section-sub">
+            Use the trip matchmaker, browse departures or just email us a short
+            brief. The goal is always the same: a shortlist you can actually use.
+          </p>
         </div>
-        <p className="home-how-text">
-          Unlike generic booking sites, we focus specifically on liveaboards and a small group
-          of trusted operators. That means better advice on when to go, which route actually
-          makes sense for your level, and what to expect on board — so you book with
-          confidence, not guesswork.
-        </p>
-      </section>
 
-      {/* Footer */}
-      <footer className="home-footer">
-        <p>Based in Portugal (EU) · info@fanecaexpeditions.com</p>
-        <Link href="/admin/login">admin</Link>
-      </footer>
+        <div className="home-cols">
+          <div className="home-col-card">
+            <h3 className="home-col-title">Trip matchmaker quiz</h3>
+            <p className="home-col-body">
+              Answer a few practical questions about experience, budget and
+              timing. We&apos;ll suggest regions and sample routes, then you can
+              send your answers straight to the concierge.
+            </p>
+            <Link href="/quiz" className="home-col-link">
+              Start the matchmaker →
+            </Link>
+          </div>
+
+          <div className="home-col-card">
+            <h3 className="home-col-title">Curated departure calendar</h3>
+            <p className="home-col-body">
+              A simple year view of handpicked departures from mid-2026 onward.
+              It&apos;s a planning tool, not a full inventory, and it changes
+              with conditions and demand.
+            </p>
+            <Link href="/calendar" className="home-col-link">
+              Explore the calendar →
+            </Link>
+          </div>
+
+          <div className="home-col-card">
+            <h3 className="home-col-title">Private liveaboard concierge</h3>
+            <p className="home-col-body">
+              If you prefer a human from the beginning, send a short brief.
+              We&apos;ll review it, question the plan where needed and suggest
+              operators we trust for your dates and level.
+            </p>
+            <Link href="/concierge" className="home-col-link">
+              Talk to the concierge →
+            </Link>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }

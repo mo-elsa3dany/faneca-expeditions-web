@@ -881,3 +881,1237 @@ body {
   font-size: 0.78rem;
   color: #374151;
 }
+
+/* ==== Home hero: boutique panel on dark background ==== */
+
+.home-hero {
+  margin-top: 2.5rem;
+  margin-bottom: 2.75rem;
+  padding: 1.8rem 1.9rem;
+  border-radius: 1.8rem;
+  background: radial-gradient(circle at top left, #0f172a 0, #020617 40%, #020617 100%);
+  color: #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+  box-shadow: 0 26px 60px rgba(15, 23, 42, 0.55);
+  border: 1px solid rgba(148, 163, 184, 0.55);
+}
+
+.home-hero-left {
+  max-width: 34rem;
+}
+
+.home-hero-right {
+  max-width: 20rem;
+}
+
+.home-kicker {
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-size: 0.7rem;
+  font-weight: 600;
+  color: #a5b4fc;
+}
+
+.home-title {
+  color: #f9fafb;
+}
+
+.home-lead {
+  color: #e5e7eb;
+}
+
+.home-footnote {
+  margin-top: 0.6rem;
+  font-size: 0.72rem;
+  color: #9ca3af;
+}
+
+.home-cta-row {
+  margin-top: 1.4rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+/* Hero right-hand card */
+
+.home-hero-card {
+  border-radius: 1.4rem;
+  padding: 1rem 1.1rem;
+  background: rgba(15, 23, 42, 0.92);
+  border: 1px solid rgba(148, 163, 184, 0.7);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.7);
+}
+
+.home-hero-label {
+  margin: 0 0 0.4rem;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #9ca3af;
+}
+
+.home-hero-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.5rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.home-hero-item {
+  padding: 0.45rem 0.5rem;
+  border-radius: 0.9rem;
+  background: rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(75, 85, 99, 0.9);
+}
+
+.home-hero-route {
+  display: block;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #e5e7eb;
+}
+
+.home-hero-meta {
+  display: block;
+  font-size: 0.7rem;
+  color: #9ca3af;
+  margin-top: 0.08rem;
+}
+
+.home-hero-link {
+  font-size: 0.75rem;
+  color: #c4b5fd;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+/* Desktop layout for hero */
+
+@media (min-width: 900px) {
+  .home-hero {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .home-hero-left {
+    max-width: 36rem;
+  }
+
+  .home-hero-right {
+    max-width: 19rem;
+  }
+}
+
+/* ==== CTA buttons refinement ==== */
+
+.home-cta-primary,
+.home-cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1.4rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease,
+    box-shadow 120ms ease,
+    transform 80ms ease;
+}
+
+.home-cta-primary {
+  background: #22c1b4;
+  color: #020617;
+  box-shadow: 0 14px 28px rgba(34, 193, 180, 0.55);
+}
+
+.home-cta-primary:hover {
+  background: #14b8a6;
+  transform: translateY(-1px);
+  box-shadow: 0 18px 36px rgba(34, 193, 180, 0.7);
+}
+
+.home-cta-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 8px 20px rgba(34, 193, 180, 0.6);
+}
+
+.home-cta-secondary {
+  background: transparent;
+  color: #e5e7eb;
+  border-color: rgba(148, 163, 184, 0.8);
+}
+
+.home-cta-secondary:hover {
+  background: rgba(15, 23, 42, 0.7);
+}
+
+/* ==== Destination + info cards: hover and polish ==== */
+
+.destination-card,
+.home-col-card {
+  border-radius: 1.4rem;
+  border: 1px solid #e5e7eb;
+  background-color: #ffffff;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.06);
+  transition:
+    box-shadow 140ms ease,
+    transform 120ms ease,
+    border-color 120ms ease,
+    background-color 120ms ease;
+}
+
+.destination-card:hover,
+.home-col-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 22px 48px rgba(15, 23, 42, 0.12);
+  border-color: #c7d2fe;
+  background-color: #f9fafb;
+}
+
+/* Keep destination images softly rounded */
+.destination-image-wrap {
+  overflow: hidden;
+  border-radius: 1.2rem;
+}
+
+/* Home sections spacing slightly calmer */
+.home-section {
+  margin-bottom: 2.8rem;
+}
+
+/* ==== Final section: "How we help" boutique panel ==== */
+
+/* Target the last home-section on the page (the helper section) */
+.home-section:last-of-type {
+  margin-top: 0.25rem;
+  margin-bottom: 2.4rem;
+  padding: 1.3rem 1.4rem 1.6rem;
+  border-radius: 1.8rem;
+  background: rgba(241, 245, 249, 0.95);
+  border: 1px solid rgba(203, 213, 225, 0.9);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.06);
+}
+
+/* Header tweak just for this section */
+.home-section:last-of-type .home-section-header {
+  margin-bottom: 1rem;
+}
+
+.home-section:last-of-type .home-section-title {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: #6b7280;
+}
+
+.home-section:last-of-type .home-section-sub {
+  font-size: 0.8rem;
+  color: #9ca3af;
+}
+
+/* Columns in this panel: slightly denser and more "tool-like" */
+.home-section:last-of-type .home-cols {
+  gap: 0.9rem;
+}
+
+.home-section:last-of-type .home-col-card {
+  border-radius: 1rem;
+  padding: 0.9rem 1rem;
+  border-color: #e5e7eb;
+  background: #ffffff;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06);
+}
+
+.home-section:last-of-type .home-col-title {
+  font-size: 0.9rem;
+  margin-bottom: 0.2rem;
+}
+
+.home-section:last-of-type .home-col-body {
+  font-size: 0.8rem;
+  color: #4b5563;
+}
+
+.home-section:last-of-type .home-col-link {
+  margin-top: 0.4rem;
+  display: inline-flex;
+  font-size: 0.8rem;
+  color: #2563eb;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Small layout adjustments on larger screens */
+@media (min-width: 900px) {
+  .home-section:last-of-type {
+    padding: 1.4rem 1.8rem 1.8rem;
+  }
+
+  .home-section:last-of-type .home-section-header {
+    margin-bottom: 1.2rem;
+  }
+}
+
+/* ==== Site header (floating, subtle) ==== */
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.96),
+    rgba(248, 250, 252, 0.92),
+    rgba(248, 250, 252, 0.85)
+  );
+  border-bottom: 1px solid rgba(226, 232, 240, 0.9);
+}
+
+.site-header-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding: 0.55rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.4rem;
+}
+
+.site-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  text-decoration: none;
+}
+
+.site-brand-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #0f172a;
+  background: radial-gradient(circle at 25% 0, #22c1b4, #6366f1);
+  box-shadow: 0 12px 24px rgba(37, 99, 235, 0.4);
+}
+
+.site-brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.site-brand-name {
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.site-brand-tagline {
+  font-size: 0.7rem;
+  color: #6b7280;
+}
+
+.site-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.site-nav-link {
+  font-size: 0.78rem;
+  color: #4b5563;
+  text-decoration: none;
+  padding: 0.25rem 0.6rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  transition:
+    background-color 120ms ease,
+    color 120ms ease,
+    border-color 120ms ease;
+}
+
+.site-nav-link:hover {
+  background-color: #eef2ff;
+  border-color: #c7d2fe;
+  color: #111827;
+}
+
+/* Slightly tighter header on small screens */
+@media (max-width: 768px) {
+  .site-header-inner {
+    padding: 0.45rem 1.1rem;
+  }
+
+  .site-nav {
+    gap: 0.55rem;
+  }
+
+  .site-nav-link {
+    padding: 0.2rem 0.45rem;
+    font-size: 0.74rem;
+  }
+
+  .site-brand-name {
+    font-size: 0.82rem;
+  }
+
+  .site-brand-tagline {
+    display: none;
+  }
+}
+
+/* ==== Site footer ==== */
+
+.site-footer {
+  margin-top: 0.6rem;
+  padding: 1.8rem 2rem 2rem;
+  border-top: 1px solid rgba(226, 232, 240, 0.9);
+  background: linear-gradient(
+    to bottom,
+    rgba(248, 250, 252, 0.98),
+    rgba(241, 245, 249, 0.98)
+  );
+}
+
+.site-footer-inner {
+  max-width: 72rem;
+  margin: 0 auto 0.9rem;
+  display: grid;
+  gap: 1.4rem;
+}
+
+.site-footer-col {
+  font-size: 0.78rem;
+  color: #4b5563;
+}
+
+.site-footer-brand {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.25rem;
+}
+
+.site-footer-heading {
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #111827;
+  margin-bottom: 0.35rem;
+}
+
+.site-footer-text {
+  margin: 0 0 0.4rem;
+  line-height: 1.6;
+}
+
+.site-footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.site-footer-link {
+  font-size: 0.78rem;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.site-footer-link:hover {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.site-footer-bottom {
+  max-width: 72rem;
+  margin: 0 auto;
+  padding-top: 0.6rem;
+  border-top: 1px dashed rgba(209, 213, 219, 0.9);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  justify-content: space-between;
+}
+
+.site-footer-small {
+  font-size: 0.7rem;
+  color: #9ca3af;
+}
+
+@media (min-width: 800px) {
+  .site-footer-inner {
+    grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr) minmax(0, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 1.4rem 1.2rem 1.7rem;
+  }
+}
+
+/* === Branded background & shell refinement === */
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at top left, #0f172a 0, transparent 55%),
+    radial-gradient(circle at bottom right, #022c22 0, transparent 55%),
+    linear-gradient(to bottom, #020617 0, #020617 40%, #020617 100%);
+}
+
+.main-shell {
+  max-width: 72rem;
+  margin: 2.4rem auto 2.8rem;
+  padding: 1.9rem 2.1rem 2.4rem;
+  border-radius: 2rem;
+  background: rgba(15, 23, 42, 0.98);
+  border: 1px solid rgba(30, 64, 175, 0.55);
+  box-shadow:
+    0 40px 90px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(148, 163, 184, 0.45);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Fine noise / texture hint using gradients (no images) */
+.main-shell::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 0 0, rgba(56, 189, 248, 0.14), transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(129, 140, 248, 0.14), transparent 55%),
+    linear-gradient(
+      135deg,
+      rgba(15, 23, 42, 0.8),
+      rgba(15, 23, 42, 0.96)
+    );
+  opacity: 0.95;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure content sits above shell overlay */
+.home,
+.quiz-main,
+.quiz-results-main,
+.calendar-main {
+  position: relative;
+  z-index: 1;
+}
+
+/* FE badge refinement */
+
+.site-brand-mark {
+  width: 26px;
+  height: 26px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: #0f172a;
+  background:
+    radial-gradient(circle at 30% 0%, #e5fffb 0, #22c1b4 34%, #0f172a 100%);
+  box-shadow:
+    0 14px 32px rgba(34, 193, 180, 0.7),
+    inset 0 0 0 1px rgba(15, 23, 42, 0.85);
+  border: 1px solid rgba(15, 23, 42, 0.9);
+}
+
+/* === Typography contrast on dark shell === */
+
+.home {
+  color: #e5e7eb;
+}
+
+/* Hero */
+.home-title {
+  color: #f9fafb;
+}
+
+.home-lead,
+.home-footnote {
+  color: #cbd5f5;
+}
+
+.home-kicker {
+  color: #a5b4fc;
+}
+
+/* Sections & cards */
+.home-section-title {
+  color: #e5e7eb;
+}
+
+.home-section-sub {
+  color: #9ca3af;
+}
+
+.destination-card {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(51, 65, 85, 0.9);
+}
+
+.destination-title {
+  color: #e5e7eb;
+}
+
+.destination-meta {
+  color: #9ca3af;
+}
+
+.destination-text {
+  color: #cbd5f5;
+}
+
+.home-col-card {
+  background: rgba(15, 23, 42, 0.96);
+  border-color: rgba(51, 65, 85, 0.9);
+}
+
+.home-col-title {
+  color: #e5e7eb;
+}
+
+.home-col-body {
+  color: #cbd5f5;
+}
+
+.home-col-link {
+  color: #a5b4fc;
+}
+
+/* Hero side card */
+.home-hero-card {
+  background: radial-gradient(circle at top left, #0b1220, #020617);
+  border-color: rgba(55, 65, 81, 0.9);
+}
+
+.home-hero-label {
+  color: #9ca3af;
+}
+
+.home-hero-route {
+  color: #e5e7eb;
+}
+
+.home-hero-meta,
+.home-hero-link {
+  color: #cbd5f5;
+}
+
+/* === Branding: ship logo in header (no neon glow) === */
+
+.site-brand-mark {
+  width: 32px;
+  height: 32px;
+  border-radius: 999px;
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  background: #020617;
+  border: 1px solid rgba(15, 23, 42, 0.9);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.85);
+}
+
+.site-brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* === Home shell: stronger contrast, no faded feel === */
+
+.main-shell.home {
+  opacity: 1;
+  background:
+    radial-gradient(circle at top, #0b1220 0, #020617 45%, #020617 100%);
+}
+
+/* Hero text contrast */
+
+.home {
+  color: #e5e7eb;
+}
+
+.home-title {
+  color: #f9fafb;
+}
+
+.home-lead {
+  color: #d1d5db;
+}
+
+.home-footnote {
+  color: #9ca3af;
+}
+
+/* Cards on dark shell */
+
+.destination-card,
+.home-col-card {
+  background: rgba(15, 23, 42, 0.98);
+  border-color: rgba(55, 65, 81, 0.9);
+}
+
+.destination-title,
+.home-col-title {
+  color: #e5e7eb;
+}
+
+.destination-meta,
+.home-section-sub,
+.home-col-body {
+  color: #cbd5f5;
+}
+
+.destination-text {
+  color: #e5e7eb;
+}
+
+/* Hero side card refinement */
+
+.home-hero-card {
+  background: radial-gradient(circle at top left, #020617, #020617);
+  border-color: rgba(55, 65, 81, 0.9);
+}
+
+.home-hero-label {
+  color: #9ca3af;
+}
+
+.home-hero-route {
+  color: #f9fafb;
+}
+
+.home-hero-meta,
+.home-hero-link {
+  color: #cbd5f5;
+}
+
+/* === Fix dim / faded look on home shell & cards === */
+
+/* Make the main shell fully opaque, no washed-out overlay */
+.main-shell.home {
+  opacity: 1;
+  filter: none;
+}
+
+/* Stronger base cards on dark background */
+.destination-card,
+.home-col-card,
+.home-hero-card {
+  background: rgba(15, 23, 42, 0.98);
+  border-color: rgba(55, 65, 81, 0.9);
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.9);
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+/* Keep text bright by default */
+.home-title {
+  color: #f9fafb;
+}
+.home-lead {
+  color: #e5e7eb;
+}
+.home-footnote {
+  color: #cbd5f5;
+}
+
+.destination-title,
+.home-col-title,
+.home-hero-route {
+  color: #f9fafb;
+}
+
+.destination-meta,
+.destination-text,
+.home-section-sub,
+.home-col-body,
+.home-hero-meta,
+.home-hero-link {
+  color: #cbd5f5;
+}
+
+/* Hover: only a little lift & extra shadow, no color fade tricks */
+.destination-card:hover,
+.home-col-card:hover,
+.home-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 1);
+}
+
+/* Lock in text colours on hover so they don't "wake up" only on hover */
+.destination-card:hover .destination-title,
+.destination-card:hover .destination-meta,
+.destination-card:hover .destination-text {
+  color: inherit;
+}
+
+.home-col-card:hover .home-col-title,
+.home-col-card:hover .home-col-body {
+  color: inherit;
+}
+
+.home-hero-card:hover .home-hero-route,
+.home-hero-card:hover .home-hero-meta,
+.home-hero-card:hover .home-hero-link {
+  color: inherit;
+}
+
+/* === Stronger base contrast on home shell & cards (no "dim until hover") === */
+
+/* Shell stays fully visible */
+.main-shell.home {
+  opacity: 1;
+  filter: none;
+}
+
+/* Base card styling on dark background */
+.destination-card,
+.home-col-card,
+.home-hero-card {
+  background: rgba(15, 23, 42, 0.98);
+  border-color: rgba(55, 65, 81, 0.9);
+  color: #e5e7eb;
+  box-shadow: 0 18px 60px rgba(15, 23, 42, 0.85);
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+/* Typography inside cards */
+.destination-title,
+.home-col-title,
+.home-hero-route {
+  color: #f9fafb;
+}
+
+.destination-meta,
+.destination-text,
+.home-section-sub,
+.home-col-body,
+.home-hero-meta,
+.home-hero-link {
+  color: #cbd5f5;
+}
+
+/* Hero body text */
+.home-title {
+  color: #f9fafb;
+}
+.home-lead {
+  color: #e5e7eb;
+}
+.home-footnote {
+  color: #cbd5f5;
+}
+
+/* Hover: slight lift, not big colour change */
+.destination-card:hover,
+.home-col-card:hover,
+.home-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 1);
+}
+
+/* Keep text colours stable on hover */
+.destination-card:hover .destination-title,
+.destination-card:hover .destination-meta,
+.destination-card:hover .destination-text,
+.home-col-card:hover .home-col-title,
+.home-col-card:hover .home-col-body,
+.home-hero-card:hover .home-hero-route,
+.home-hero-card:hover .home-hero-meta,
+.home-hero-card:hover .home-hero-link {
+  color: inherit;
+}
+
+/* === Footer: visible, high-contrast, sits at the bottom === */
+
+.site-root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.site-main-shell {
+  flex: 1;
+}
+
+/* Footer bar */
+.site-footer {
+  border-top: 1px solid rgba(148, 163, 184, 0.4);
+  background: rgba(2, 6, 23, 0.98);
+  backdrop-filter: blur(18px);
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  color: #e5e7eb;
+}
+
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.site-footer-left {
+  opacity: 0.9;
+}
+
+.site-footer-right {
+  opacity: 0.9;
+  text-align: right;
+}
+
+/* === HARD RESET: home shell, cards, footer === */
+
+/* Kill any fading/overlay on the main shell */
+.main-shell {
+  opacity: 1 !important;
+  filter: none !important;
+  background: radial-gradient(circle at top, #020617 0, #020617 45%, #000814 100%) !important;
+}
+
+/* Destination + info cards: dark, high-contrast by default */
+.destination-card,
+.home-col-card,
+.home-hero-card {
+  background-color: #020617 !important;
+  border: 1px solid rgba(148, 163, 184, 0.35) !important;
+  color: #e5e7eb !important;
+  box-shadow: 0 24px 80px rgba(15, 23, 42, 0.9) !important;
+  transition:
+    box-shadow 150ms ease,
+    transform 150ms ease;
+}
+
+/* Top image strip in destination cards stays clean */
+.destination-card img {
+  border-bottom-left-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+}
+
+/* Text inside cards */
+.destination-title,
+.home-col-title,
+.home-hero-route {
+  color: #f9fafb !important;
+}
+
+.destination-meta,
+.destination-text,
+.home-section-sub,
+.home-col-body,
+.home-hero-meta,
+.home-hero-link {
+  color: #cbd5f5 !important;
+}
+
+/* Hover = subtle lift only, no colour change */
+.destination-card:hover,
+.home-col-card:hover,
+.home-hero-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 32px 90px rgba(15, 23, 42, 1) !important;
+}
+
+/* Footer: clearly separated and readable */
+.site-footer {
+  background: #020617 !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.5) !important;
+  color: #e5e7eb !important;
+  padding: 1rem 2.5rem !important;
+  font-size: 0.8rem !important;
+}
+
+.site-footer-inner {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  align-items: center;
+}
+
+.site-footer-left,
+.site-footer-right {
+  opacity: 1 !important;
+}
+
+/* === NUKE THE GLOBAL OVERLAY & FADING ON HOME === */
+
+/* Make sure base background is dark but clear */
+html,
+body {
+  background: radial-gradient(circle at top, #020617 0, #020617 45%, #000814 100%) !important;
+}
+
+/* Remove any dimming overlays */
+body::before,
+.main-shell::before,
+.home-shell::before,
+.page-shell::before {
+  content: none !important;
+}
+
+/* Ensure the main shell is full-strength, not faded */
+.main-shell,
+.home-shell,
+.page-shell {
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+/* Footer stays crisp on the dark background */
+.site-footer {
+  background: #020617 !important;
+  border-top: 1px solid rgba(148, 163, 184, 0.5) !important;
+  color: #e5e7eb !important;
+}
+
+/* Admin link styling */
+.site-footer a.admin-link {
+  margin-left: 1rem;
+  color: #e5e7eb;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
+}
+.site-footer a.admin-link:hover {
+  border-bottom-color: #f97316;
+}
+
+/* === Cosmic background & floating shell for Faneca === */
+
+/* Deep space gradient + subtle star noise */
+html,
+body {
+  background:
+    radial-gradient(circle at 0% 0%, #1d2b4f 0, transparent 55%),
+    radial-gradient(circle at 100% 100%, #4b164c 0, transparent 55%),
+    radial-gradient(circle at 50% 120%, #020617 0, #000814 60%),
+    #000814;
+  color: #e5e7eb;
+}
+
+/* Very subtle speckled "stars" using layered gradients (no images) */
+body {
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(148, 163, 184, 0.25) 0, transparent 55%),
+    radial-gradient(circle at 80% 10%, rgba(129, 140, 248, 0.22) 0, transparent 60%),
+    radial-gradient(circle at 15% 85%, rgba(56, 189, 248, 0.18) 0, transparent 65%),
+    radial-gradient(circle at 50% 120%, rgba(15, 23, 42, 0.9) 0, #000814 70%);
+  background-blend-mode: screen, screen, normal;
+}
+
+/* Main shell: floating capsule on top of space */
+.site-main-shell {
+  max-width: 72rem;
+  margin: 2.4rem auto 2.8rem;
+  padding: 2rem 2.2rem 2.5rem;
+  border-radius: 2rem;
+  background: radial-gradient(circle at top left, #020617, #020617 55%, #020617 100%);
+  border: 1px solid rgba(30, 64, 175, 0.65);
+  box-shadow:
+    0 40px 110px rgba(0, 0, 0, 0.95),
+    0 0 0 1px rgba(15, 23, 42, 0.9);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Small device tweak */
+@media (max-width: 768px) {
+  .site-main-shell {
+    margin: 1.4rem auto 2rem;
+    padding: 1.4rem 1.3rem 2rem;
+    border-radius: 1.6rem;
+  }
+}
+
+/* Hero: orbital glow behind copy so it feels like a plotted route */
+.home-hero {
+  position: relative;
+}
+
+/* The orbit glow sits behind the grid */
+.home-hero::before {
+  content: "";
+  position: absolute;
+  inset: -80px -40px auto;
+  height: 260px;
+  background:
+    radial-gradient(ellipse at 0% 50%, rgba(56, 189, 248, 0.16), transparent 60%),
+    radial-gradient(ellipse at 100% 40%, rgba(129, 140, 248, 0.18), transparent 65%),
+    radial-gradient(ellipse at 50% 100%, rgba(15, 23, 42, 0.9), transparent 70%);
+  opacity: 0.9;
+  filter: blur(2px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ensure hero content floats above the orbit */
+.home-hero-grid {
+  position: relative;
+  z-index: 1;
+}
+
+/* Slightly crisper hero text on dark shell */
+.home-title {
+  letter-spacing: 0.01em;
+}
+
+.home-lead {
+  max-width: 34rem;
+}
+
+/* ===== Space Animated Background (moving gradient + stars) ===== */
+.space-bg {
+  min-height: 100vh;
+  background-color: #000814;
+  background-image:
+    radial-gradient(circle at 20% 20%, rgba(0, 150, 255, 0.25), transparent 55%),
+    radial-gradient(circle at 80% 60%, rgba(255, 80, 180, 0.22), transparent 60%),
+    radial-gradient(circle at 10% 90%, rgba(56, 189, 248, 0.18), transparent 60%);
+  background-size: 220% 220%;
+  animation: space-float 18s ease-in-out infinite alternate;
+  position: relative;
+}
+
+/* Slow drift of the gradient background */
+@keyframes space-float {
+  0% {
+    background-position: 0% 0%, 100% 100%, 0% 100%;
+  }
+  50% {
+    background-position: 10% 15%, 90% 85%, 5% 95%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 100%, 0% 100%;
+  }
+}
+
+/* Tiny moving starfield overlay */
+.space-bg::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("/images/stars.png");
+  background-size: cover;
+  opacity: 0.35;
+  animation: stars-move 25s linear infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes stars-move {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-600px); }
+}
+
+/* ===== Refined animated space background (no external image) ===== */
+.space-bg {
+  min-height: 100vh;
+  background-color: #020617;
+  background-image:
+    radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.18) 0, transparent 55%),
+    radial-gradient(circle at 80% 30%, rgba(59, 130, 246, 0.22) 0, transparent 55%),
+    radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.18) 0, transparent 55%),
+    radial-gradient(circle at 90% 90%, rgba(244, 244, 245, 0.18) 0, transparent 55%);
+  background-size: 260% 260%;
+  animation: space-float 18s ease-in-out infinite alternate;
+  position: relative;
+}
+
+/* Override old ::before starfield that used an image */
+.space-bg::before {
+  content: none !important;
+}
+
+/* Faster, more obvious drift */
+@keyframes space-float {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  50% {
+    background-position: 20% 20%, 80% 10%, 10% 80%, 90% 90%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+}
+
+/* ===== Super-visible animated background ===== */
+.space-bg-animated {
+  min-height: 100vh;
+  background-color: #020617;
+  background-image:
+    radial-gradient(circle at 0% 0%, rgba(56, 189, 248, 0.35) 0, transparent 60%),
+    radial-gradient(circle at 100% 0%, rgba(59, 130, 246, 0.35) 0, transparent 60%),
+    radial-gradient(circle at 0% 100%, rgba(16, 185, 129, 0.35) 0, transparent 60%),
+    radial-gradient(circle at 100% 100%, rgba(252, 211, 77, 0.30) 0, transparent 60%);
+  background-size: 350% 350%;
+  animation: bg-orbit 10s linear infinite;
+}
+
+/* Big obvious drift across the screen */
+@keyframes bg-orbit {
+  0% {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+  25% {
+    background-position: 50% 0%, 100% 50%, 0% 50%, 50% 100%;
+  }
+  50% {
+    background-position: 100% 0%, 50% 100%, 50% 0%, 0% 50%;
+  }
+  75% {
+    background-position: 50% 100%, 0% 50%, 100% 50%, 50% 0%;
+  }
+  100% {
+    background-position: 0% 0%, 100% 0%, 0% 100%, 100% 100%;
+  }
+}
+
+/* SUPER OBVIOUS TEST MODE so we know the animation is working */
+.space-bg-debug {
+  min-height: 100vh;
+  background-image:
+    linear-gradient(45deg, red, yellow);
+  background-size: 200% 200%;
+  animation: debug-move 3s linear infinite;
+}
+
+@keyframes debug-move {
+  0% { background-position: 0% 0%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 0% 0%; }
+}
